@@ -20,31 +20,31 @@ import {LinkKind, IdentifierKind} from "./Link.js";
 export class InvalidUrlView extends TemplateView {
     render(t, vm) {
         return t.div({ className: "DisclaimerView card" }, [
-            t.h1("Invalid URL"),
+            t.h1("URL invalide"),
             t.p([
-                'The link you have entered is not valid. If you like, you can ',
-                t.a({ href: "#/" }, 'return to the home page.')
+                'Le lien que vous avez saisi n\'est pas valide. Si vous le souhaitez, vous pouvez ',
+                t.a({ href: "#/" }, 'retourner à la page d\'accueil.')
             ]),
             vm.validFixes.length ? this._renderValidFixes(t, vm.validFixes) : [],
         ]);
     }
 
     _describeRoom(identifierKind) {
-        return identifierKind === IdentifierKind.RoomAlias ? "room alias" : "room";
+        return identifierKind === IdentifierKind.RoomAlias ? "l'alias de salon" : "le salon";
     }
 
     _describeLinkKind(linkKind, identifierKind) {
         switch (linkKind) {
-            case LinkKind.Room: return `The ${this._describeRoom(identifierKind)} `;
-            case LinkKind.User: return "The user ";
-            case LinkKind.Group: return "The group ";
-            case LinkKind.Event: return `An event in ${this._describeRoom(identifierKind)} `;
+            case LinkKind.Room: return `${this._describeRoom(identifierKind)} `;
+            case LinkKind.User: return "L'utilisateur ";
+            case LinkKind.Group: return "Le groupe ";
+            case LinkKind.Event: return `Un évènement dans ${this._describeRoom(identifierKind)} `;
         }
     }
 
     _renderValidFixes(t, validFixes) {
         return t.p([
-            'Did you mean any of the following?',
+            'Vouliez-vous plutôt dire :',
             t.ul(validFixes.map(fix =>
                 t.li([
                     this._describeLinkKind(fix.link.kind, fix.link.identifierKind),

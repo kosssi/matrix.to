@@ -23,15 +23,15 @@ export class Quaternion {
     get author() { return "The Quotient project"; }
     get homepage() { return "https://github.com/quotient-im/Quaternion"; }
     get platforms() { return [Platform.Windows, Platform.macOS, Platform.Linux]; }
-    get description() { return 'Qt5 and C++ cross-platform desktop Matrix client.'; }
+    get description() { return 'Client Matrix de bureau multiplateforme en Qt5 et C++.'; }
     getMaturity(platform) { return Maturity.Beta; }
     getDeepLink(platform, link) {}
     canInterceptMatrixToLinks(platform) { return false; }
 
     getLinkInstructions(platform, link) {
         switch (link.kind) {
-            case LinkKind.User: return [`Type `, style.code(`/invite ${link.identifier}`)];
-            case LinkKind.Room: return [`Type `, style.code(`/join ${link.identifier}`)];
+            case LinkKind.User: return [`Tapez `, style.code(`/invite ${link.identifier}`)];
+            case LinkKind.Room: return [`Tapez `, style.code(`/join ${link.identifier}`)];
         }
     }
 

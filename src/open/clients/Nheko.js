@@ -27,7 +27,7 @@ export class Nheko {
     get author() { return "mujx, red_sky, deepbluev7, Konstantinos Sideris"; }
     get homepage() { return "https://github.com/Nheko-Reborn/nheko"; }
     get platforms() { return [Platform.Windows, Platform.macOS, Platform.Linux]; }
-    get description() { return 'A native desktop app for Matrix that feels more like a mainstream chat app.'; }
+    get description() { return 'Application de bureau native pour Matrix qui ressemble davantage à une application de discussion grand public.'; }
     getMaturity(platform) { return Maturity.Beta; }
     getDeepLink(platform, link) {
         if (platform === Platform.Linux || platform === Platform.Windows) {
@@ -38,8 +38,8 @@ export class Nheko {
 
     getLinkInstructions(platform, link) {
         switch (link.kind) {
-            case LinkKind.User: return [`Type `, style.code(`/invite ${link.identifier}`)];
-            case LinkKind.Room: return [`Type `, style.code(`/join ${link.identifier}`)];
+            case LinkKind.User: return [`Tapez `, style.code(`/invite ${link.identifier}`)];
+            case LinkKind.Room: return [`Tapez `, style.code(`/join ${link.identifier}`)];
         }
     }
 

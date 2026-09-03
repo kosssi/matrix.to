@@ -55,7 +55,7 @@ class LoadedPreviewView extends TemplateView {
             t.div({className: "avatarContainer"}, avatar),
             t.h1(vm => vm.name),
             t.p({className: {identifier: true, hidden: vm => !vm.identifier}}, vm => vm.identifier),
-            t.div({className: {memberCount: true, hidden: vm => !vm.memberCount}}, t.p([vm => vm.memberCount, " members"])),
+            t.div({className: {memberCount: true, hidden: vm => !vm.memberCount}}, t.p([vm => vm.memberCount, " membres"])),
             t.p({className: {topic: true, hidden: vm => !vm.topic}}, [vm => vm.topic]),
         ]);
     }

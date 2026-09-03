@@ -22,37 +22,37 @@ export class ServerConsentView extends TemplateView {
     render(t, vm) {
         const useAnotherServer = t.button({
             className: "text",
-            onClick: () => vm.setShowServers()}, "use another server");
+            onClick: () => vm.setShowServers()}, "utiliser un autre serveur");
         const continueWithoutPreview = t.button({
             className: "text",
             onClick: () => vm.continueWithoutConsent(this._askEveryTimeChecked)
-        }, "continue without a preview");
+        }, "continuer sans aperçu");
         return t.div({className: "ServerConsentView"}, [
             t.p([
-                "Preview this link using the ",
+                "Prévisualiser ce lien en utilisant le serveur d'accueil ",
                 t.strong(vm => vm.selectedServer || "…"),
-                " homeserver ",
+                " ",
                 t.span({className: {hidden: vm => !vm.selectedServer}}, [
                     " (",
                     t.a({
                         href: vm => `#/policy/${vm.selectedServer}`,
                         target: "_blank",
-                    }, "privacy policy"),
+                    }, "politique de confidentialité"),
                     ")",
                 ]),
                 t.span({className: {hidden: vm => vm.showSelectServer}}, [
                     ", ",
                     useAnotherServer,
                 ]),
-                " or ",
+                " ou ",
                 continueWithoutPreview,
                 "."
             ]),
             t.form({action: "#", id: "serverConsentForm", onSubmit: evt => this._onSubmit(evt)}, [
                 t.mapView(vm => vm.showSelectServer, show => show ? new ServerOptions(vm) : null),
                 t.div({className: "actions"}, [
-                    t.label([t.input({type: "checkbox", name: "askEveryTime"}), "Ask every time"]),
-                    t.input({type: "submit", value: "Continue", className: "primary fullwidth"})
+                    t.label([t.input({type: "checkbox", name: "askEveryTime"}), "Toujours demander"]),
+                    t.input({type: "submit", value: "Continuer", className: "primary fullwidth"})
                 ])
             ])
         ]);
@@ -85,7 +85,7 @@ class ServerOptions extends TemplateView {
             t.input({
                 type: "text",
                 className: "line",
-                placeholder: "Other",
+                placeholder: "Autre",
                 name: "otherServer",
                 onClick: evt => this._onClickOther(evt),
             })

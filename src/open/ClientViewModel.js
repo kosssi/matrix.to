@@ -54,12 +54,12 @@ export class ClientViewModel extends ViewModel {
     // these are only shown in the open stage
     _createOpenActions() {
         const hasPreferredWebInstance = this.hasPreferredWebInstance;
-        let deepLinkLabel = "Continue";
+        let deepLinkLabel = "Continuer";
         if (hasPreferredWebInstance) {
             if (this._proposedPlatform === this._nativePlatform) {
-                deepLinkLabel = "Open in app";
+                deepLinkLabel = "Ouvrir dans l'application";
             } else {
-                deepLinkLabel = `Open on ${this._client.getPreferredWebInstance(this._link)}`;
+                deepLinkLabel = `Ouvrir sur ${this._client.getPreferredWebInstance(this._link)}`;
             }
         }
         const actions = [];
@@ -83,7 +83,7 @@ export class ClientViewModel extends ViewModel {
         // show only if there is a preferred instance, and if we don't already link to it in the first button
         if (hasPreferredWebInstance && this._webPlatform && this._proposedPlatform !== this._webPlatform) {
             actions.push({
-                label: `Open on ${this._client.getPreferredWebInstance(this._link)}`,
+                label: `Ouvrir sur ${this._client.getPreferredWebInstance(this._link)}`,
                 url: this._client.getDeepLink(this._webPlatform, this._link),
                 kind: "open-in-web",
                 activated: () => {} // don't persist this choice as we don't persist the preferred web instance, it's in the url
@@ -111,8 +111,8 @@ export class ClientViewModel extends ViewModel {
             const webDeepLink = this._client.getDeepLink(this._webPlatform, this._link);
             if (webDeepLink) {
                 const webLabel = this.hasPreferredWebInstance ?
-                    `Open on ${this._client.getPreferredWebInstance(this._link)}` :
-                    `Continue in your browser`;
+                    `Ouvrir sur ${this._client.getPreferredWebInstance(this._link)}` :
+                    `Continuer dans votre navigateur`;
                 actions.push({
                     label: webLabel,
                     url: webDeepLink,
@@ -141,7 +141,7 @@ export class ClientViewModel extends ViewModel {
             if (subDomainIdx !== -1) {
                 label = preferredWebInstance.slice(preferredWebInstance.length - subDomainIdx + 1);
             }
-            return `Hosted by ${label}`;
+            return `Hébergé par ${label}`;
         }
         return;
     }
@@ -202,7 +202,7 @@ export class ClientViewModel extends ViewModel {
         if (desktopPlatforms.length === 1) {
             textPlatforms.push(desktopPlatforms[0]);
         } else {
-            textPlatforms.push("Desktop");
+            textPlatforms.push("Bureau");
         }
         if (platforms.includes(Platform.Android)) {
             textPlatforms.push("Android");

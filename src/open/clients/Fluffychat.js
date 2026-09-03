@@ -29,7 +29,7 @@ export class Fluffychat {
             Platform.DesktopWeb,
         ];
     }
-    get description() { return "Chat with your friends using the cutest messenger in the Matrix network"; }
+    get description() { return "Discutez avec vos amis en utilisant la messagerie la plus mignonne du réseau Matrix"; }
     getMaturity(platform) {
         switch (platform) {
             case Platform.Android: return Maturity.Stable;
@@ -60,15 +60,15 @@ export class Fluffychat {
         if (link.kind === LinkKind.User) {
             switch (platform) {
                 case Platform.Android: return;
-                case Platform.DesktopWeb: return "Open the web app at https://fluffychat.im/web/ and log in to your account. Click on '+' and paste the username.";
-                default: return "Open the app and click on '+' and paste the username.";
+                case Platform.DesktopWeb: return "Ouvrez l'application web sur https://fluffychat.im/web/ et connectez-vous à votre compte. Cliquez sur '+' et collez le nom d'utilisateur.";
+                default: return "Ouvrez l'application et cliquez sur '+' puis collez le nom d'utilisateur.";
             }
         }
         if (link.kind === LinkKind.Room) {
             switch (platform) {
                 case Platform.Android: return;
-                case Platform.DesktopWeb: return "Open the web app at https://fluffychat.im/web/ and log in to your account. Click on 'Discover' and paste the identifier.";
-                default: return "Open the app on your device. Click on 'Discover' and paste the identifier.";
+                case Platform.DesktopWeb: return "Ouvrez l'application web sur https://fluffychat.im/web/ et connectez-vous à votre compte. Cliquez sur 'Découvrir' et collez l'identifiant.";
+                default: return "Ouvrez l'application sur votre appareil. Cliquez sur 'Découvrir' et collez l'identifiant.";
             }
         }
     }

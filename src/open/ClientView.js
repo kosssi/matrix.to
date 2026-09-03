@@ -48,7 +48,7 @@ export class ClientView extends TemplateView {
                         href: vm.homepage,
                         target: "_blank",
                         rel: "noopener noreferrer"
-                    }, "Learn more")]),
+                    }, "En savoir plus")]),
                     t.p({className: "platforms"}, formatPlatforms(vm.availableOnPlatformNames)),
                 ]),
                 t.img({className: "clientIcon", src: vm.iconUrl})
@@ -80,8 +80,8 @@ class InstallClientView extends TemplateView {
         if (textInstructions) {
             const copyButton = t.button({
                 className: "copy",
-                title: "Copy instructions",
-                "aria-label": "Copy instructions",
+                title: "Copier les instructions",
+                "aria-label": "Copier les instructions",
                 onClick: evt => {
                     if (copy(vm.copyString, copyButton.parentElement)) {
                         copyButton.className = "tick";
@@ -102,8 +102,8 @@ class InstallClientView extends TemplateView {
                 rel: "noopener noreferrer",
                 href: vm.openActions[0].url,
                 onClick: () => vm.openActions[0].activated(),
-            }, "open it here");
-            children.push(t.p([`If you already have ${vm.name} installed, you can `, openItHere, "."]))
+            }, "l'ouvrir ici");
+            children.push(t.p([`Si vous avez déjà ${vm.name} installé, vous pouvez `, openItHere, "."]))
         }
 
         children.push(showBack(t, vm));
@@ -114,8 +114,8 @@ class InstallClientView extends TemplateView {
 
 function showBack(t, vm) {
     return t.p({className: {caption: true, "back": true, hidden: vm => !vm.showBack}}, [
-        `Continue with ${vm.name} · `,
-        t.button({className: "text", onClick: () => vm.back()}, "Change"),
+        `Poursuivre avec ${vm.name} · `,
+        t.button({className: "text", onClick: () => vm.back()}, "Changer"),
     ]);
 }
 

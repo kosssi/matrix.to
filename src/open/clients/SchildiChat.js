@@ -40,7 +40,7 @@ export class SchildiChat {
 
     get icon() { return "images/client-icons/schildichat.svg"; }
     get name() { return "SchildiChat"; }
-    get description() { return 'Feature-rich messenger for Matrix based on Element with some extras and tweaks.'; }
+    get description() { return 'Messagerie riche en fonctionnalités pour Matrix basée sur Element, avec quelques extras et ajustements.'; }
     get homepage() { return "https://schildi.chat"; }
     get author() { return "SchildiChat team"; }
     getMaturity(platform) { return Maturity.Stable; }

@@ -27,7 +27,7 @@ export class Fractal {
     get author() { return "Daniel Garcia Moreno"; }
     get homepage() { return "https://gitlab.gnome.org/World/fractal"; }
     get platforms() { return [Platform.Linux]; }
-    get description() { return 'GNOME client, suitable for desktop and mobile. Written in Rust.'; }
+    get description() { return 'Client GNOME, adapté au bureau et au mobile. Écrit en Rust.'; }
     getMaturity(platform) { return Maturity.Beta; }
 
     getDeepLink(platform, link) {
@@ -40,7 +40,7 @@ export class Fractal {
 
     getLinkInstructions(platform, link) {
         if (link.kind === LinkKind.User || link.kind === LinkKind.Room) {
-            return "Click the menu button above the list of rooms, select the Join Room entry, and paste the identifier";
+            return "Cliquez sur le bouton de menu au-dessus de la liste des salons, sélectionnez l'entrée Rejoindre un salon, puis collez l'identifiant";
         }
     }
 

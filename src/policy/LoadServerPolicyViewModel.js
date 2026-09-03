@@ -21,7 +21,7 @@ export class LoadServerPolicyViewModel extends ViewModel {
     constructor(options) {
         super(options);
         this.server = options.server;
-        this.message = `Looking up ${this.server} privacy policy…`;
+        this.message = `Recherche de la politique de confidentialité de ${this.server}…`;
         this.loading = false;
     }
 
@@ -33,19 +33,19 @@ export class LoadServerPolicyViewModel extends ViewModel {
             if (homeserver) {
                 const url = await homeserver.getPrivacyPolicyUrl();
                 if (url) {
-                    this.message = `Loading ${this.server} privacy policy now…`;
+                    this.message = `Chargement de la politique de confidentialité de ${this.server}…`;
                     this.openLink(url);
                 } else {
                     this.loading = false;
-                    this.message = `${this.server} does not declare a privacy policy.`;
+                    this.message = `${this.server} ne déclare pas de politique de confidentialité.`;
                 }
             } else {
                 this.loading = false;
-                this.message = `${this.server} does not look like a matrix homeserver.`;
+                this.message = `${this.server} ne semble pas être un serveur d'accueil matrix.`;
             }
         } catch (err) {
             this.loading = false;
-            this.message = `Failed to get the privacy policy for ${this.server}`;
+            this.message = `Impossible d'obtenir la politique de confidentialité de ${this.server}`;
         }
         this.emitChange();
     }

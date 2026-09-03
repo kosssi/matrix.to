@@ -36,7 +36,7 @@ export function copyButton(t, getCopyText, label, classNames) {
     return t.button({className: `${classNames} icon copy`, onClick: evt => {
         const button = evt.target;
         if (copy(getCopyText(), button)) {
-            button.innerText = "Copied!";
+            button.innerText = "Copié !";
             button.classList.remove("copy");
             button.classList.add("tick");
             setTimeout(() => {

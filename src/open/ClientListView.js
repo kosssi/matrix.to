@@ -32,7 +32,7 @@ export class ClientListView extends TemplateView {
 class AllClientsView extends TemplateView {
     render(t, vm) {
         return t.div({className: "ClientListView"}, [
-            t.h2("Choose an app to continue"),
+            t.h2("Choisissez une application pour continuer"),
             t.map(vm => vm.clientList, (clientList, t) => {
                 return t.div({className: "list"}, clientList.map(clientViewModel => {
                     return t.view(new ClientView(clientViewModel));
@@ -44,7 +44,7 @@ class AllClientsView extends TemplateView {
                     checked: vm.showUnsupportedPlatforms,
                     onChange: evt => vm.showUnsupportedPlatforms = evt.target.checked,
                 }),
-                "Show apps not available on my platform"
+                "Afficher les applications non disponibles sur ma plateforme"
             ])),
             t.div(t.label({className: "filterOption"}, [
                 t.input({
@@ -52,7 +52,7 @@ class AllClientsView extends TemplateView {
                     checked: vm.showExperimental,
                     onChange: evt => vm.showExperimental = evt.target.checked,
                 }),
-                "Show experimental apps"
+                "Afficher les applications expérimentales"
             ])),
         ]);
     }

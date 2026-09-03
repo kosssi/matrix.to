@@ -26,15 +26,15 @@ export class Weechat {
     get author() { return "Poljar"; }
     get homepage() { return "https://github.com/poljar/weechat-matrix"; }
     get platforms() { return [Platform.Windows, Platform.macOS, Platform.Linux]; }
-    get description() { return 'Command-line Matrix interface using Weechat.'; }
+    get description() { return 'Interface Matrix en ligne de commande utilisant Weechat.'; }
     getMaturity(platform) { return Maturity.Beta; }
     getDeepLink(platform, link) {}
     canInterceptMatrixToLinks(platform) { return false; }
 
     getLinkInstructions(platform, link) {
         switch (link.kind) {
-            case LinkKind.User: return [`Type `, style.code(`/invite ${link.identifier}`)];
-            case LinkKind.Room: return [`Type `, style.code(`/join ${link.identifier}`)];
+            case LinkKind.User: return [`Tapez `, style.code(`/invite ${link.identifier}`)];
+            case LinkKind.Room: return [`Tapez `, style.code(`/join ${link.identifier}`)];
         }
     }
 

@@ -42,7 +42,7 @@ export class Cinny {
         ];
     }
     get description() {
-        return "A Matrix client focusing primarily on simple, elegant and secure interface. The main goal is to have an instant messaging application that is easy on people and has a modern touch.";
+        return "Un client Matrix axé avant tout sur une interface simple, élégante et sécurisée. L'objectif principal est d'avoir une application de messagerie instantanée agréable à utiliser et dotée d'une touche moderne.";
     }
     getMaturity(platform) {
         return Maturity.Stable;

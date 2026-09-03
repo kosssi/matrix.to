@@ -27,7 +27,7 @@ export class Thunderbird {
             Platform.Windows, Platform.macOS, Platform.Linux,
         ];
     }
-    get description() { return "Thunderbird is a free open-source email, calendar & chat app."; }
+    get description() { return "Thunderbird est une application libre et gratuite de messagerie, calendrier et discussion."; }
     getMaturity(platform) {
         return Maturity.Beta;
     }
@@ -43,13 +43,13 @@ export class Thunderbird {
 
     getLinkInstructions(platform, link) {
         if (link.kind === LinkKind.User) {
-            return "Open the Chat tab, click on 'Add Contact' and paste the username.";
+            return "Ouvrez l'onglet Discussion, cliquez sur 'Ajouter un contact' et collez le nom d'utilisateur.";
         }
         if (link.kind === LinkKind.Room) {
             return [
-                "Open the Chat tab, click on 'Join Chat' and paste the identifier or type ",
+                "Ouvrez l'onglet Discussion, cliquez sur 'Rejoindre une discussion' et collez l'identifiant, ou tapez ",
                 style.code(`/join ${link.identifier}`),
-                " in an existing Matrix conversation."
+                " dans une conversation Matrix existante."
             ];
         }
     }

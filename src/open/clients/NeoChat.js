@@ -25,7 +25,7 @@ export class NeoChat {
     get author() { return "Tobias Fella and Carl Schwan"; }
     get homepage() { return "https://apps.kde.org/neochat/"; }
     get platforms() { return [Platform.Linux]; }
-    get description() { return 'NeoChat is a convergent, cross-platform Matrix client.'; }
+    get description() { return 'NeoChat est un client Matrix convergent et multiplateforme.'; }
     getMaturity(platform) { return Maturity.Beta; }
     getDeepLink(platform, link) {
         if (platform === Platform.Linux || platform === Platform.Windows) {
@@ -36,8 +36,8 @@ export class NeoChat {
 
     getLinkInstructions(platform, link) {
         switch (link.kind) {
-            case LinkKind.User: return [`Type `, style.code(`/invite ${link.identifier}`)];
-            case LinkKind.Room: return [`Type `, style.code(`/join ${link.identifier}`)];
+            case LinkKind.User: return [`Tapez `, style.code(`/invite ${link.identifier}`)];
+            case LinkKind.Room: return [`Tapez `, style.code(`/join ${link.identifier}`)];
         }
     }
 

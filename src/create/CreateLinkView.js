@@ -22,17 +22,17 @@ export class CreateLinkView extends TemplateView {
     render(t, vm) {
         const link = t.a({href: vm => vm.linkUrl}, vm => vm.linkUrl);
         return t.div({className: "CreateLinkView card"}, [
-            t.h1("Create shareable links to Matrix rooms, users or messages without being tied to any app"),
+            t.h1("Créez des liens partageables vers des salons, utilisateurs ou messages Matrix sans être lié à une application"),
             t.form({action: "#", onSubmit: evt => this._onSubmit(evt)}, [
                 t.div(t.input({
                     className: "fullwidth large",
                     type: "text",
                     name: "identifier",
                     required: true,
-                    placeholder: "#room:example.com, @user:example.com",
+                    placeholder: "#salon:example.com, @utilisateur:example.com",
                     onChange: evt => this._onIdentifierChange(evt)
                 })),
-                t.div(t.input({className: "primary fullwidth icon link", type: "submit", value: "Create link"}))
+                t.div(t.input({className: "primary fullwidth icon link", type: "submit", value: "Créer le lien"}))
             ]),
         ]);
     }
@@ -48,7 +48,7 @@ export class CreateLinkView extends TemplateView {
     _onIdentifierChange(evt) {
         const inputField = evt.target;
         if (!this.value.validateIdentifier(inputField.value)) {
-            inputField.setCustomValidity("That doesn't seem valid. Try #room:example.com, @user:example.com or +group:example.com.");
+            inputField.setCustomValidity("Cela ne semble pas valide. Essayez #salon:example.com, @utilisateur:example.com ou +groupe:example.com.");
         } else {
             inputField.setCustomValidity("");
         }

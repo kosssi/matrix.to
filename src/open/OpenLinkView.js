@@ -36,9 +36,9 @@ class ShowLinkView extends TemplateView {
             t.view(new PreviewView(vm.previewViewModel)),
             t.view(new ClientListView(vm.clientsViewModel)),
             t.p({className: {caption: true, hidden: vm => !vm.previewDomain}}, [
-                vm => vm.previewFailed ? `${vm.previewDomain} has not returned a preview.` : `Preview provided by ${vm.previewDomain}`,
+                vm => vm.previewFailed ? `${vm.previewDomain} n'a pas renvoyé d'aperçu.` : `Aperçu fourni par ${vm.previewDomain}`,
                 " · ",
-                t.button({className: "text", onClick: () => vm.changeServer()}, "Change"),
+                t.button({className: "text", onClick: () => vm.changeServer()}, "Changer"),
             ]),
         ]);
     }

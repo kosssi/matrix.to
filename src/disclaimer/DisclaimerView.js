@@ -19,14 +19,14 @@ import {TemplateView} from "../utils/TemplateView.js";
 export class DisclaimerView extends TemplateView {
     render(t) {
         return t.div({ className: "DisclaimerView card" }, [
-            t.h1("Disclaimer"),
+            t.h1("Avertissement"),
             t.p(
-                'Matrix.to is a service provided by the Matrix.org Foundation ' +
-                'which allows you to easily create invites to Matrix rooms and accounts, ' +
-                'regardless of your Matrix homeserver. The service is provided "as is" without ' +
-                'warranty of any kind, either express, implied, statutory or otherwise. ' +
-                'The Matrix.org Foundation shall not be responsible or liable for the room ' +
-                'and account contents shared via this service.'
+                'Matrix.to est un service fourni par la Matrix.org Foundation ' +
+                'qui permet de créer facilement des invitations vers des salons et comptes Matrix, ' +
+                'quel que soit votre serveur d\'accueil Matrix. Le service est fourni « tel quel » sans ' +
+                'garantie d\'aucune sorte, qu\'elle soit expresse, implicite, légale ou autre. ' +
+                'La Matrix.org Foundation ne pourra être tenue responsable du contenu des salons ' +
+                'et des comptes partagés via ce service.'
             ),
         ]);
     }

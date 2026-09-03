@@ -53,7 +53,7 @@ export class Element {
         ]; 
     }
     get name() {return "Element"; }
-    get description() { return 'Fully-featured Matrix client, used by millions.'; }
+    get description() { return 'Client Matrix complet, utilisé par des millions de personnes.'; }
     get homepage() { return "https://element.io"; }
     get author() { return "Element"; }
     getMaturity(platform) { return Maturity.Stable; }

@@ -34,7 +34,7 @@ export class Syphon {
         ];
     }
     get description() {
-        return "chat with your privacy and freedom intact";
+        return "discutez en toute confidentialité et liberté";
     }
 
     getMaturity(platform) {
@@ -60,12 +60,12 @@ export class Syphon {
 
     getLinkInstructions(platform, link) {
         if (link.kind === LinkKind.User) {
-            return "Open the app, click on the direct message button (inside the floating button \
-                    at the bottom), then paste the identifier.";
+            return "Ouvrez l'application, cliquez sur le bouton de message direct (dans le bouton flottant \
+                    en bas), puis collez l'identifiant.";
         }
         if (link.kind === LinkKind.Room) {
-            return "Open the app, click on the search public rooms button (inside the floating button \
-                at the bottom), then paste the identifier.";
+            return "Ouvrez l'application, cliquez sur le bouton de recherche de salons publics (dans le bouton flottant \
+                en bas), puis collez l'identifiant.";
         }
     }
 

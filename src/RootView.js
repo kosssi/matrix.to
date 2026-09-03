@@ -31,13 +31,13 @@ export class RootView extends TemplateView {
             t.mapView(vm => vm.loadServerPolicyViewModel, vm => vm ? new LoadServerPolicyView(vm) : null),
             t.div({className: "footer"}, [
                 t.p(t.img({src: "images/matrix-logo.svg"})),
-                t.p(["This invite uses ", externalLink(t, "https://matrix.org", "Matrix"), ", an open network for secure, decentralized communication."]),
+                t.p(["Cette invitation utilise ", externalLink(t, "https://matrix.org", "Matrix"), ", un réseau ouvert pour une communication sécurisée et décentralisée."]),
                 t.ul({className: "links"}, [
-                    t.li(externalLink(t, "https://github.com/matrix-org/matrix.to", "GitHub project")),
-                    t.li(externalLink(t, "https://github.com/matrix-org/matrix.to/tree/main/src/open/clients", "Add your app")),
+                    t.li(externalLink(t, "https://github.com/matrix-org/matrix.to", "Projet GitHub")),
+                    t.li(externalLink(t, "https://github.com/matrix-org/matrix.to/tree/main/src/open/clients", "Ajouter votre application")),
                     t.li({className: {hidden: vm => !vm.hasPreferences}},
-                        t.button({className: "text", onClick: () => vm.clearPreferences()}, "Clear preferences")),
-                    t.li(t.a({href: "#/disclaimer/"}, "Disclaimer")),
+                        t.button({className: "text", onClick: () => vm.clearPreferences()}, "Effacer les préférences")),
+                    t.li(t.a({href: "#/disclaimer/"}, "Avertissement")),
                 ])
             ])
         ]);
